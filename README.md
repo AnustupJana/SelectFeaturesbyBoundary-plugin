@@ -46,46 +46,36 @@ The **Select Features by Boundary** plugin for QGIS enables users to select all 
    - Click a polygon in the boundary layer (automatically detected as the visible polygon layer with the largest extent).
    - Features in the target layer (active layer) that are within or intersect the clicked polygon are selected.
      ![Diagram of the System](https://github.com/AnustupJana/SelectFeaturesbyBoundary-plugin/blob/main/doc/4th.png?raw=true)
-   - A message in the QGIS message bar indicates success (e.g., "Selected 5 features in Parcels") or issues (e.g., "No polygon found").
+   - A message in the QGIS message bar indicates success (e.g., "Selected 25 features in POI") or issues (e.g., "No polygon found").
      ![Diagram of the System](https://github.com/AnustupJana/SelectFeaturesbyBoundary-plugin/blob/main/doc/5th.png?raw=true)
 
 4. **Repeat**:
    - The map tool deactivates after one click. Click the toolbar button again to select features in another boundary polygon.
 
 ## Requirements
-- **QGIS Version**: 3.0 or higher (tested up to QGIS 3.34).
+- **QGIS Version**: 3.0 or higher.
 - **Layer Types**: At least one visible polygon layer (boundary) and one visible vector layer (target, active layer) with compatible Coordinate Reference Systems (CRS).
 
 ## Troubleshooting
-- **"No polygon found at clicked location"**:
+- **"No feature found at clicked location"**:
   - Ensure you click inside a polygon in the boundary layer.
-  - Zoom in for precise clicking.
+  - Zoom in for POI clicking.
   - Verify the boundary layer is visible and contains valid polygon geometries (use **Processing Toolbox > Check Validity** and **Fix Geometries**).
+ 
+    ![Diagram of the System](https://github.com/AnustupJana/SelectFeaturesbyBoundary-plugin/blob/main/doc/6th.png?raw=true)
+
 - **No features selected**:
   - Confirm the target layer is active and visible in the Layers Panel.
   - Ensure the boundary and target layers use the same CRS (check in **Layer Properties > Information**).
   - Test manually with **Processing Toolbox > Select by Location**.
+ 
+    ![Diagram of the System](https://github.com/AnustupJana/SelectFeaturesbyBoundary-plugin/blob/main/doc/7th.png?raw=true)
+
 - **Plugin not visible**:
   - Verify the plugin folder (`SelectFeaturesbyBoundary`) is in the correct QGIS plugins directory with all required files (`select_features_by_boundary.py`, `metadata.txt`, `resources.py`, `icon.png`, `__init__.py`).
   - Restart QGIS after installation.
 - **Log Output**:
   - Check the QGIS Python Console (Ctrl+Alt+P) for error messages or debug information.
-
-## Plugin Structure
-- `select_features_by_boundary.py`: Main plugin logic.
-- `metadata.txt`: Plugin metadata.
-- `resources.py`: Compiled Qt resources for the icon.
-- `icon.png`: Toolbar icon (24x24 PNG).
-- `__init__.py`: Marks the directory as a Python package.
-
-## Development
-To modify or rebuild the plugin:
-1. Edit `select_features_by_boundary.py` for core functionality.
-2. Update `resources.qrc` and recompile `resources.py` using:
-   ```bash
-   pyrcc5 -o resources.py resources.qrc
-   ```
-3. Ensure `icon.png` exists in the plugin directory.
 
 ## Contributing
 - Fork the repository and submit pull requests with improvements or bug fixes.
