@@ -13,9 +13,13 @@ The **Select Features by Boundary** plugin for QGIS enables users to select all 
 ## Installation
 1. **From QGIS Plugin Repository**:
    - In QGIS, go to `Plugins > Manage and Install Plugins`.
+     
      ![Diagram of the System](https://github.com/AnustupJana/SelectFeaturesbyBoundary-plugin/blob/main/doc/1st.png?raw=true)
+     
    - Search for "Select Features by Boundary" in the `All` tab.
+     
      ![Diagram of the System](https://github.com/AnustupJana/SelectFeaturesbyBoundary-plugin/blob/main/doc/2nd.png?raw=true)
+     
    - Click `Install Plugin`.
 
 2. **From ZIP File**:
@@ -39,14 +43,18 @@ The **Select Features by Boundary** plugin for QGIS enables users to select all 
 
 2. **Open the Plugin**:
    - Click the plugin icon in the QGIS toolbar or select **Select Features by Boundary** from the **Plugins** menu.
+     
      ![Diagram of the System](https://github.com/AnustupJana/SelectFeaturesbyBoundary-plugin/blob/main/doc/3rd.png?raw=true)
 
 3. **Select Features**:
    - The plugin activates a map tool, changing the cursor to a crosshair.
    - Click a polygon in the boundary layer (automatically detected as the visible polygon layer with the largest extent).
    - Features in the target layer (active layer) that are within or intersect the clicked polygon are selected.
+     
      ![Diagram of the System](https://github.com/AnustupJana/SelectFeaturesbyBoundary-plugin/blob/main/doc/4th.png?raw=true)
+     
    - A message in the QGIS message bar indicates success (e.g., "Selected 25 features in POI") or issues (e.g., "No polygon found").
+     
      ![Diagram of the System](https://github.com/AnustupJana/SelectFeaturesbyBoundary-plugin/blob/main/doc/5th.png?raw=true)
 
 4. **Repeat**:
